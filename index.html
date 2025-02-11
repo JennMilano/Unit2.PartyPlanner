@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Parties</title>
+    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="./index.css"/>
+</head>
+
+<body>
+    <header>
+        <h1>Upcoming Parties</h1>
+    </header>
+    
+    <!-- Create form to add party. Include name, date, time, location, and description fields, and submit button -->
+    <div id="new-party-form-container">
+        <form id="new-party-form">
+          <label for="name">
+            Name
+            <input type="text" id="name" name="name" placeholder="Name">
+          </label>
+          <label for="imageUrl">
+            location
+            <input type="text" id="location" name="location" placeholder="Location">
+          </label>
+          <label for="description">
+            Description
+            <textarea id="description" name="description" placeholder="Description"></textarea>
+          </label>
+          <label>
+            Date
+            <input type="date" name="date" placeholder="12/12/24">
+          </label>
+          <label>
+            Time
+            <input type="time" name="time" placeholder="12:00">
+          </label>
+          <button type="submit">Create</button>
+        </form>
+      </div>
+
+    <!-- Create list of parties -->
+    <!-- include delete button for each item -->
+
+    <div id="party-container">
+        <!-- <div>
+            <p>Party 1</p>
+            <button>delete</button>
+        </div>
+        <div>
+            <p>Party 2</p>
+            <button>delete</button>
+        </div> -->
+    </div>
+
+
+
+
+</body>
+</html>
