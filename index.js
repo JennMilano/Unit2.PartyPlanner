@@ -23,11 +23,13 @@ const fetchAllParties = async () => {
     try {
         const response = await fetch(API_URL);
         const json = await response.json();
+
         state.parties = json.data;
+        console.log(state.parties)
 
         renderAllParties();
     } catch (error) {
-        console.log("ERROR in fetchAllParties")
+        console.log("ERROR in fetchAllParties", error);
     }
 };
 
@@ -47,7 +49,7 @@ const createNewParty = async (name, description, date, location) => {
             body: JSON.stringify({
                 name,
                 description,
-                date: new DATE(date).toISOString(),
+                date: new Date(date).toISOString(),
                 location,
             }),
             headers: {
@@ -103,7 +105,7 @@ partyList.forEach((party) => {
     <p>${party.location}<p>
     <button class = "delete-button" data-id ="${party.id}">Remove</button>
     `;
-    partyContainerContainer.appendChild(partyElement);
+    partyContainer.appendChild(partyElement);
     const deleteButton = partyElement.querySelector(".delete-button");
 
     deleteButton.addPartyListener("click", (occur) => {
